@@ -1,0 +1,64 @@
+.nome_estado {
+    display: flex;
+    gap: 25px;
+    width: 100vh;
+}
+
+.inputs{
+    margin-top: 5px;
+}
+
+.nome_cliente {
+    position: relative;
+    left: 0px;
+}
+
+.estado-botao {
+    width: 90vh;
+    gap: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.finalizado{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #6E4973;
+    font-family: 'Madimi One';
+}   
+.finalizado:hover{
+    cursor: pointer;
+    background-color: #542e59;
+}
+
+.negociacao{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #E37559;
+    font-family: 'Madimi One';
+}   
+.negociacao:hover{
+    cursor: pointer;
+    background-color: #b8543b;
+}
+
+
+.aprovado{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #29D967;
+    font-family: 'Madimi One';
+}   
+.aprovado:hover{
+    cursor: pointer;
+    background-color: #1b8640;
+}
+.descricao{
+    margin-top: 5px;
+    width: 100%;
+    height: 40vh;
+}

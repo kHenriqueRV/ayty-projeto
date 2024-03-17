@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { redirectToPage } from '../../Components/LateralBar'
 
 
+
+
 function Adicionar() {
 
     useEffect(() => {
@@ -52,7 +54,7 @@ function Adicionar() {
         };
 
         try {
-            fetch(`http://localhost:777/contratos/${_id}`, {
+            fetch(`http://localhost:3030/contratos/${_id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -66,11 +68,12 @@ function Adicionar() {
                     return resposta.json(); // Retorna os dados atualizados, se necessário
                 })
                 .then(data => {
+                    alert('Contrato editado com sucesso')
                     console.log('Contrato editado com sucesso:', data);
                     setTimeout(() => {
                         redirectToPage('/');
-                    }, 2000);
-                    
+                    }, 800);
+
                 })
                 .catch(error => {
                     console.error('Erro ao editar contrato:', error);
@@ -96,14 +99,18 @@ function Adicionar() {
 
         };
         try {
-            const resposta = await fetch('http://localhost:777/contratos', {
+            const resposta = await fetch('http://localhost:3030/contratos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(contratoDados),
 
-            });
+            }, alert('Contrato adicionado com sucesso'),
+                setTimeout(() => {
+                    redirectToPage('/');
+                }, 800)
+            );
             resposta.json().then(data => {
             }).catch(error => {
                 console.error('Erro ao acessar o corpo da resposta:', error);
@@ -119,20 +126,26 @@ function Adicionar() {
     return (
         <>
             <div className="Amostragem">
-                <div>inputs
+                <div className='inputs'>
                     <section className='nome_estado'>
                         <input id='nome' className="nome_cliente"
                             value={nome_cliente}
-                            onChange={(event) => setnome_cliente(event.target.value)}>
+                            onChange={(event) => setnome_cliente(event.target.value)}
+                            placeholder='nome do cliente'>
                         </input>
-                        <button onClick={() => setestado('finalizado')}>finalizado</button>
-                        <button onClick={() => setestado('negociacao')}>negociacao</button>
-                        <button onClick={() => setestado('aprovado')}>aprovado</button>
+                        <section className='estado-botao'>
+                            <button className='finalizado' onClick={() => setestado('finalizado')}>finalizado</button>
+                            <button className='negociacao' onClick={() => setestado('negociacao')}>negociacao</button>
+                            <button className='aprovado' onClick={() => setestado('aprovado')}>aprovado</button>
+                        </section>
+                        
                     </section>
+                    <h4>basta pressionar o botão para definir o estado</h4>
                     <section>
                         <input id='descricao' className="descricao"
                             value={descricao}
                             onChange={(event) => setdescricao(event.target.value)}
+                            placeholder='descrição'
                         >
                         </input>
                     </section>
@@ -140,8 +153,9 @@ function Adicionar() {
                         <button className='editar'
                             onClick={() => { editar_contrato() }} >editar</button>
                         <button className='confirmar'
-                            onClick={() => { adicionar_contrato(); redirectToPage('/'); }}>adicionar</button>
+                            onClick={() => { adicionar_contrato() }}>adicionar</button>
                     </section>
+                    <h4>OBS: se você veio através da opção de editar e apertar adicionar, ele pode acabar duplicando o contrato.</h4>
                 </div>
             </div>
         </>

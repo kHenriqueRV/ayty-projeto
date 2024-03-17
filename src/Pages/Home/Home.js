@@ -13,7 +13,7 @@ function Home() {
     useEffect(() => {
         async function buscaContratos() {
             try {
-                const resposta = await fetch('http://localhost:777/contratos');
+                const resposta = await fetch('http://localhost:3030/contratos');
                 if (!resposta.ok) {
                     throw new Error('Erro de servidor: ' + resposta.status);
                 }

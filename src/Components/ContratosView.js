@@ -24,15 +24,16 @@ export default function ContratosView({ _id, id, nome_cliente, dataCriacao, desc
 
     const deletaContrato = async (id) => {
         try {
-            const resposta = await fetch(`http://localhost:777/contratos/${_id}`, {
+            const resposta = await fetch(`http://localhost:3030/contratos/${_id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
-                setTimeout(() => {
-                    redirectToPage('/')
-                }, 2000);
+            alert('Contrato deletado com sucesso')
+            setTimeout(() => {
+                redirectToPage('/')
+            }, 800);
 
             if (!resposta.ok) {
                 throw new Error('Erro ao excluir contrato');
@@ -58,9 +59,9 @@ export default function ContratosView({ _id, id, nome_cliente, dataCriacao, desc
         <>
             <div className='contrato'>
                 <div className="card-infos">
-                    <div id={`id${_id}`} className='id'>{id}</div>
-                    <div id={`nome${_id}`} className='cliente'>{nome_cliente}</div>
-                    <div id={`data${_id}`} className='data'>{formatarData(dataCriacao)}</div>
+                    <div id={`id${_id}`} className='id'>ID: {id}</div>
+                    <div id={`nome${_id}`} className='cliente'>Cliente: {nome_cliente}</div>
+                    <div id={`data${_id}`} className='data'>Data de criação: {formatarData(dataCriacao)}</div>
                     <div className="card-status"
                         style={{ backgroundColor: getStatusColor(estado) }}>
                         <div>{estado}</div>
@@ -69,8 +70,10 @@ export default function ContratosView({ _id, id, nome_cliente, dataCriacao, desc
                 <div id={`descricao${_id}`} className="card-descricao">
                     {descricao}
                 </div>
-                <button onClick={redirectToPageEdit} className='editar'>Editar Contrato</button>
-                <button onClick={deletaContrato} className='remover'>Excluir contrato</button>
+                <div className='botoes'>
+                    <button onClick={redirectToPageEdit} className='editar_view'>Editar Contrato</button>
+                    <button onClick={deletaContrato} className='remover'>Excluir contrato</button>
+                </div>
             </div>
         </>
 
