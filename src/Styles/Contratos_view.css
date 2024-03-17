@@ -1,0 +1,64 @@
+.contrato{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 145vh;
+    height: 30vh;
+    font-family: "Madimi One";
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+}
+
+.card-infos {
+    display: flex;
+    position: relative;
+    padding: 0px;
+    gap: 26px;
+    height: 10vh;
+    width: 100%;
+    top: 0px;
+    align-items: center;
+    background-color: #FFB956;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.card-status {
+    border-radius: 20px;
+    padding: 5px;
+    position: absolute;
+    right: 40px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+}
+
+.card-descricao {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    background-color: white;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.remover {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f8815c;
+    position: relative;
+    height: 50px;
+    right: -60vh;
+    font-family: 'Madimi One';
+}
+
+.remover:hover{
+    background-color: #f1351c ;
+    transition: all 0.3s ease-in;
+    padding: 10px;
+}

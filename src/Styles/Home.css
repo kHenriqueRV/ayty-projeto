@@ -1,0 +1,99 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #276B73;
+}
+
+.Amostragem {
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    background: #2B848B;
+    margin-left: 20vh;
+    margin-top: 10vh;
+    width: 150vh;
+    height: 190vh;
+    max-height: 80vh;
+    align-items: center;
+}
+
+.Pesquisas {
+    display: flex;
+    width: 140vh;
+    justify-content: space-between;
+    height: 6vh;
+    align-items: center;
+}
+
+.pesquisa {
+    border: none;
+    width: 25vh;
+    height: 4vh;
+    font-size: 19px;
+    box-shadow: 2px 2px 2px 2px #276B73;
+    border-radius: 3px;
+}
+
+.Contratos_amostra {
+    height: 68vh;
+    max-height: 68vh;
+    overflow-y: auto;
+    border: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contratos_amostra::-webkit-scrollbar {
+    width: 10px;
+    background-color: #2B848B;
+}
+
+.Contratos_amostra::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #276B73;
+}
+
+.spinner {
+    animation: rotate 2s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 53%;
+    width: 50px;
+    height: 50px;
+
+
+}
+
+.spinner .path {
+    stroke: #11272f;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+
+.contratos {
+    padding: 10px;
+}

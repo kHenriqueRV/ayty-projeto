@@ -1,0 +1,65 @@
+nav {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    background-color: #204653;
+    align-items: center;
+    justify-content: space-between;
+    width: 20vh;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.Perfil {
+    display: flex;
+    position: relative;
+    top: 2vh;
+    left: -5vh;
+    width: 5vh;
+    height: 5vh;
+}
+
+.Botao-navegacao {
+    display: grid;
+    position: relative;
+    width: 100%;
+    height: 7vh;
+    align-items: center;
+    height: 60vh;
+
+    :hover {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        background-color: #11272f;
+        color: #FFB956;
+    }
+
+}
+
+.nav-button {
+    display: flex;
+    position: relative;
+    background: none;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    font-family: "Madimi One";
+    font-size: 28px;
+    width: 100;
+    height: 50px;
+    color: white;
+
+}
+
+
+
+.VivaLogo {
+    display: flex;
+    width: 15vh;
+    height: 15vh;
+}
